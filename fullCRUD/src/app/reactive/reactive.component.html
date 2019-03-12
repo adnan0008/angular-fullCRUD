@@ -1,0 +1,32 @@
+<h2>Reaactive forms</h2>
+
+<ul class="heroes">
+  <li *ngFor="let item of rHero" [class.selected]="item=== selectedHero" >
+   <span class="badge">{{item?.id}}</span>{{item?.firstname}}
+    <!--<button class="deleted"(click)="delete(item)">x</button>-->
+  </li>
+</ul>
+
+
+
+<form #my [formGroup]="fileForm" >
+  <div >
+    <label > Id</label>
+    <input type="text" id="id"  formControlName="id"/><br>
+ 
+  </div>
+  
+  <div >
+    <label> Name</label>
+    <input type="text" id="firstname" formControlName="firstname"/><br>
+   
+  </div>
+  
+  <div class="row">
+    <input type="submit" name="button" value="add" (click)="set(fileForm.value) " />
+    <input type="submit" name="button" value="get" (click)="get(fileForm.value.id)"/>
+    <input type="submit" name="button" value="remove" (click)="removing(fileForm.value.id)" />
+    <input type="submit" name="button" value="update" (click)="updating(fileForm.value)" />
+  </div>
+  
+  </form>

@@ -1,0 +1,20 @@
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let item of herooes" [class.selected]="item=== selectedHero" (click)="onSelect(item)" >
+   <span class="badge">{{item?.id}}</span>{{item?.firstname}}
+    <button class="deleted"(click)="delete(item)">x</button>
+  </li>
+</ul>
+
+<div class="row">
+  id
+  <input type="text" [(ngModel)]="hero.id" name="id">
+  <br>
+  name <input type="text" [(ngModel)]="hero.firstname" name="text"><br>
+
+  <input type="submit" name="button" value="add" (click)="setHeroes(hero)" />
+  <input type="submit" name="button" value="get" (click)="getHero(hero.id)"/>
+  <input type="submit" name="button" value="remove" (click)="removed(hero.id)" />
+  <input type="submit" name="button" value="update" (click)="update(hero.id)" />
+
+</div>

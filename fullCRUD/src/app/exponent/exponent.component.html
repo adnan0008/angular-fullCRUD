@@ -1,0 +1,15 @@
+<h2>parent view</h2>
+<div class="row">
+  Exponent 
+  <input type="text" [(ngModel)]="exponents.expo" name="exponent">
+  <br>
+  Base<input type="text" [(ngModel)]="exponents.nmber" name="nmber"><br>
+
+  <button type="submit" (click)="recursion(exponents.expo, exponents.nmber)" >submit</button>
+
+</div>
+<a routerLink="/lifecycle">LifeCycle</a>
+<router-outlet></router-outlet><br>
+
+<app-life-cycle [personName]="namedPerson"
+(named)="onClick($event)"></app-life-cycle>
